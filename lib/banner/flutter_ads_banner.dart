@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ads_plugin/banner/bloc/banner_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'bloc/banner_bloc.dart';
 
 class FlutterAdsBanner extends StatefulWidget {
   const FlutterAdsBanner({super.key, this.iosId, this.androidId});

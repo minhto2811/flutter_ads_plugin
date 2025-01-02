@@ -1,5 +1,6 @@
-import 'package:flutter_ads_plugin/admod_service.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import '../admod_service.dart';
 
 class FlutterAdsInterstitial {
   static Future<void> show(
