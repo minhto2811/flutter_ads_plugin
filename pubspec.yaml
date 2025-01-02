@@ -1,7 +1,7 @@
 name: flutter_ads_plugin
 description: "Create ads quickly and conveniently"
 version: 0.0.1
-homepage:
+homepage: https://github.com/minhto2811/flutter_ads_plugin.git
 
 environment:
   sdk: ^3.5.1
