@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ads/banner/flutter_ads_banner.dart';
-import 'package:flutter_ads/interstitial/flutter_ads_Interstitial.dart';
-import 'package:flutter_ads/native/flutter_ads_native.dart';
-import 'package:flutter_ads/rewarded/flutter_ads_rewarded.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:flutter_ads_plugin/flutter_ads_plugin.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,21 +15,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   showRewardedAd() {
-    FlutterAdsRewarded.show(onUserEarnedReward: (view,item){
+    FlutterAdsRewarded.show(onUserEarnedReward: (view, item) {
       //TODO
-    }, onError: (e){
+    }, onError: (e) {
       //TODO
-    }, onClose: (){
+    }, onClose: () {
       //TODO
     });
   }
 
   showInterstitialAd() {
-    FlutterAdsInterstitial.show(onError: (e){
+    FlutterAdsInterstitial.show(onError: (e) {
       //TODO
-    }, onAdClosed: (){
+    }, onAdClosed: () {
       //TODO
     });
   }

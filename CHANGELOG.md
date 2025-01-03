@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Update instructions
+
+## 0.0.4
+
+* Update: Lazy Initialization, Limit access to functions and variables
