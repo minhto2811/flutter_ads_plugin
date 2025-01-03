@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Update: Lazy Initialization, Limit access to functions and variables
+
+## 0.0.5
+
+* Update: Usage Example
