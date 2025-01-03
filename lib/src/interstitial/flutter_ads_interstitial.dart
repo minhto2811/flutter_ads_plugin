@@ -1,6 +1,9 @@
+import 'package:flutter_ads_plugin/src/admod_service.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import '../admod_service.dart';
+
+
+
 
 class FlutterAdsInterstitial {
   static Future<void> show(
@@ -9,7 +12,7 @@ class FlutterAdsInterstitial {
       required void Function(String) onError,
       required void Function() onAdClosed}) async {
     try {
-      final ad = await AdModService.getInterstitialAd(
+      final ad = await AdModService().getInterstitialAd(
         iosId: iosId,
         androidId: androidId,
       );
