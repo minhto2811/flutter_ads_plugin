@@ -1,4 +1,4 @@
-# flutter_ads_plugin – Simple Google Ads for Flutter
+#Simple Google Ads for Flutter
 
 ![Leonardo_Phoenix_10_A_modern_sleek_mobile_application_screensh_2](https://github.com/user-attachments/assets/b3d6968e-c2a0-4b60-aef8-ae706809baa7)
 
@@ -17,6 +17,7 @@ with minimal effort. No complex configurations required.
     - Banner Ads
     - Interstitial Ads
     - Rewarded Ads
+    - Native Ads
 
 ---  
 
@@ -31,21 +32,6 @@ with minimal effort. No complex configurations required.
 
 [Watch Demo](https://github.com/user-attachments/assets/11cc31ab-b149-4b0c-b0b3-71c90de8d139)
 
----  
-
-## 📦 Installation
-
-Add the plugin to your `pubspec.yaml` file:
-
-```yaml
-fire_auth_quick: <latest-version>
-```  
-
-Then run:
-
-```bash
-flutter pub get
-```
 
 ---
 
@@ -56,7 +42,116 @@ For detailed setup instructions, refer to the official guides:
 - [AdMob Quick Start](https://developers.google.com/admob/flutter/quick-start)
 - [Ad Manager Quick Start](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start)
 
----  
+---
+
+## 📦 Installation
+
+Add the plugin to your `pubspec.yaml` file:
+
+```yaml
+fire_auth_quick: ^<latest-version>
+```  
+
+Then run:
+
+```bash
+flutter pub get
+```
+
+---
+
+## 🚀 Usage
+
+To use the plugin, import the `flutter_ads_plugin` package in your Flutter app:
+
+```dart
+  import 'package:flutter_ads_plugin/flutter_ads_plugin.dart';
+```
+
+Initialize Mobile Ads in your `main.dart` file:
+
+```dart
+  void main() {
+    WidgetsFlutterBinding.ensureInitialized();
+    MobileAds.instance.initialize();
+    runApp(const MyApp());
+  }
+```
+
+Display banner ads:
+
+```dart
+  FlutterAdsBanner(
+    iosId: '',
+    androidId: '',
+  )
+```
+
+Display native ads:
+
+```dart
+  FlutterAdsNative(
+    androidId: '',
+    iosId: '',
+    templateStyle: null,
+    factoryId: null,
+    constraints: null,
+)
+```
+
+Display Rewarded Ads:
+
+```dart
+  showRewardedAd() {
+    FlutterAdsRewarded.show(
+      androidId: '',
+      iosId: '',
+      onUserEarnedReward: (view, item) {
+      //TODO
+      },
+      onError: (e) {
+      //TODO
+      },
+      onClose: () {
+      //TODO
+      });
+  }
+```
+
+Display Interstitial Ads:
+
+```dart
+  showInterstitialAd() {
+    FlutterAdsInterstitial.show(
+        androidId: '',
+        iosId: '',
+        onError: (e) {
+          //TODO
+        },
+        onClose: () {
+          //TODO
+        });
+  }
+```
+--- 
+
+## 📝 API Reference
+
+| Function               | Description                                                             |
+|------------------------|-------------------------------------------------------------------------|
+| **onUserEarnedReward** | Callback triggered when the user earns a reward from a rewarded ad.     |                         |
+| **onError**            | Callback triggered when an error occurs during ad loading or rendering. |                         |
+| **onClose**            | Callback triggered when the ad is closed by the user.                   |
+
+| Setter            | Description                                      |
+|-------------------|--------------------------------------------------|
+| **androidId**     | Identifier for **Android** configurations.       |
+| **iosId**         | Identifier for **iOS** configurations.           |
+| **factoryId**     | Unique ID for the ad **factory** instance.       |
+| **templateStyle** | Defines the **visual style** of the ad template. |
+| **constraints**   | Layout **constraints** for rendering the ad.     |
+
+---
 
 ## 🧑‍💻 Example
 
@@ -145,24 +240,6 @@ class _MyAppState extends State<MyApp> {
 
 --- 
 
-## 📝 API Reference
-
-| Function               | Description                                                             |
-|------------------------|-------------------------------------------------------------------------|
-| **onUserEarnedReward** | Callback triggered when the user earns a reward from a rewarded ad.     |                         |
-| **onError**            | Callback triggered when an error occurs during ad loading or rendering. |                         |
-| **onClose**            | Callback triggered when the ad is closed by the user.                   |
-
-| Setter            | Description                                      |
-|-------------------|--------------------------------------------------|
-| **androidId**     | Identifier for **Android** configurations.       |
-| **iosId**         | Identifier for **iOS** configurations.           |
-| **factoryId**     | Unique ID for the ad **factory** instance.       |
-| **templateStyle** | Defines the **visual style** of the ad template. |
-| **constraints**   | Layout **constraints** for rendering the ad.     |
-
----  
-
 ## 🎥 [YouTube Video Guide](https://youtu.be/TEYG8qtimOY?si=sqm2jT0xGG4Qzfdg)
 
 For a detailed guide on how to integrate and use the Ad Plugin, check out the video tutorial.
@@ -175,10 +252,20 @@ We welcome community contributions. Feel free to submit pull requests or report 
 
 ---  
 
-## 📄 License
+## 🐞 Issues and Feedback
 
-MIT License – Free to use and modify as needed.
+Please [file an issue](https://github.com/minhto2811/flutter_ads_plugin/issues) to send feedback or
+report a bug. Thank you!
+
+---
+
+## 📜 License
+
+[MIT License](https://mit-license.org/).
 
 ---  
 
-**Made with ❤️ by mxgk**  
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/minhto28dee)
+
+**Made with ❤️ by minhto28**  

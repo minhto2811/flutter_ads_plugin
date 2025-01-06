@@ -25,3 +25,7 @@
 ## 0.0.7
 
 * Update: API Reference
+
+## 0.0.8
+
+* Fix some bugs 
