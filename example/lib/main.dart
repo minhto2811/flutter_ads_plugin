@@ -16,21 +16,30 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   showRewardedAd() {
-    FlutterAdsRewarded.show(onUserEarnedReward: (view, item) {
-      //TODO
-    }, onError: (e) {
-      //TODO
-    }, onClose: () {
-      //TODO
-    });
+    FlutterAdsRewarded.show(
+        androidId: '',
+        iosId: '',
+        onUserEarnedReward: (view, item) {
+          //TODO
+        },
+        onError: (e) {
+          //TODO
+        },
+        onClose: () {
+          //TODO
+        });
   }
 
   showInterstitialAd() {
-    FlutterAdsInterstitial.show(onError: (e) {
-      //TODO
-    }, onAdClosed: () {
-      //TODO
-    });
+    FlutterAdsInterstitial.show(
+        androidId: '',
+        iosId: '',
+        onError: (e) {
+          //TODO
+        },
+        onClose: () {
+          //TODO
+        });
   }
 
   @override
@@ -44,9 +53,18 @@ class _MyAppState extends State<MyApp> {
             mainAxisSize: MainAxisSize.max,
             children: [
               const SizedBox(height: 24),
-              const FlutterAdsBanner(),
+              const FlutterAdsBanner(
+                iosId: '',
+                androidId: '',
+              ),
               const SizedBox(height: 24),
-              const FlutterAdsNative(),
+              const FlutterAdsNative(
+                androidId: '',
+                iosId: '',
+                templateStyle: null,
+                factoryId: null,
+                constraints: null,
+              ),
               ElevatedButton(
                   onPressed: showRewardedAd,
                   child: const Text('Show Rewarded Ad')),

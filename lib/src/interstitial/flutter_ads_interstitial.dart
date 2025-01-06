@@ -10,7 +10,7 @@ class FlutterAdsInterstitial {
       {String? iosId,
       String? androidId,
       required void Function(String) onError,
-      required void Function() onAdClosed}) async {
+      required void Function() onClose}) async {
     try {
       final ad = await AdModService().getInterstitialAd(
         iosId: iosId,
@@ -20,7 +20,7 @@ class FlutterAdsInterstitial {
       ad.fullScreenContentCallback =
           FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
         ad.dispose();
-        onAdClosed.call();
+        onClose.call();
       }, onAdFailedToShowFullScreenContent: (ad, error) {
         ad.dispose();
         onError.call(error.message);
