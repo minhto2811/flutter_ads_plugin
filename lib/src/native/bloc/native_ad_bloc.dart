@@ -1,12 +1,8 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_ads_plugin/src/admod_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
-
-
 
 part 'native_ad_event.dart';
 

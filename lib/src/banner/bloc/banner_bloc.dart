@@ -4,7 +4,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-
 part 'banner_event.dart';
 part 'banner_state.dart';
 
@@ -16,7 +15,7 @@ class BannerBloc extends Bloc<BannerEvent, BannerState> {
   BannerAd? _ad;
 
   void _initialEvent(InitialEvent event, Emitter<BannerState> emit) async {
-    if(_ad != null) return;
+    if (_ad != null) return;
     try {
       _ad = await AdModService().getBannerAd(
         context: event.context,

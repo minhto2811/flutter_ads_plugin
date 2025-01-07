@@ -1,4 +1,4 @@
-#Simple Google Ads for Flutter
+# Simple Google Ads for Flutter
 
 ![Leonardo_Phoenix_10_A_modern_sleek_mobile_application_screensh_2](https://github.com/user-attachments/assets/b3d6968e-c2a0-4b60-aef8-ae706809baa7)
 
@@ -49,7 +49,7 @@ For detailed setup instructions, refer to the official guides:
 Add the plugin to your `pubspec.yaml` file:
 
 ```yaml
-fire_auth_quick: ^<latest-version>
+flutter_ads_plugin: ^<latest-version>
 ```  
 
 Then run:

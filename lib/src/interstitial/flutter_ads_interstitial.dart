@@ -1,10 +1,6 @@
 import 'package:flutter_ads_plugin/src/admod_service.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-
-
-
-
 class FlutterAdsInterstitial {
   static Future<void> show(
       {String? iosId,

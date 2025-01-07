@@ -28,4 +28,8 @@
 
 ## 0.0.8
 
-* Fix some bugs 
+* Fix some bugs
+
+## 0.0.9
+
+* Update: API Reference

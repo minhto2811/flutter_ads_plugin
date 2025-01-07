@@ -9,7 +9,6 @@ final class BannerInitial extends BannerState {
   List<Object> get props => [];
 }
 
-
 final class LoadBannerState extends BannerState {
   final BannerAd? ad;
 
@@ -18,4 +17,3 @@ final class LoadBannerState extends BannerState {
   @override
   List<Object?> get props => [ad];
 }
-
