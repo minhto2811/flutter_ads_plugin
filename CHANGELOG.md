@@ -33,3 +33,20 @@
 ## 0.0.9
 
 * Update: API Reference
+
+## 0.0.10
+
+* Fix:  -> Fetching podspec for `flutter_ads_plugin` from `.symlinks/plugins/flutter_ads_plugin/ios`
+  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
+
+## 0.0.11
+
+* Fix: (2) -> Fetching podspec for `flutter_ads_plugin` from
+  `.symlinks/plugins/flutter_ads_plugin/ios`
+  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
+
+## 0.0.12
+
+* Fix: (3) -> Fetching podspec for `flutter_ads_plugin` from
+  `.symlinks/plugins/flutter_ads_plugin/ios`
+  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
