@@ -54,3 +54,7 @@
 ## 0.0.13
 
 * Update: Add TemplateType to NativeAd
+
+## 0.0.14
+
+* Update: Remove Attribute `constraints` in NativeAd, (Replace 'templateStyle' to NativeAd)

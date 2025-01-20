@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
                 iosId: '',
                 templateStyle: null,
                 factoryId: null,
-                constraints: null,
+                templateType: null,
               ),
               ElevatedButton(
                   onPressed: showRewardedAd,

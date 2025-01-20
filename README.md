@@ -95,7 +95,7 @@ Display native ads:
     iosId: '',
     templateStyle: null,
     factoryId: null,
-    constraints: null,
+    templateType: null,
 )
 ```
 
@@ -149,7 +149,6 @@ Display Interstitial Ads:
 | **iosId**         | Identifier for **iOS** configurations.           |
 | **factoryId**     | Unique ID for the ad **factory** instance.       |
 | **templateStyle** | Defines the **visual style** of the ad template. |
-| **constraints**   | Layout **constraints** for rendering the ad.     |
 | **templateType**  | Type of the native ad template.                  |
 
 ---
@@ -222,7 +221,7 @@ class _MyAppState extends State<MyApp> {
                 iosId: '',
                 templateStyle: null,
                 factoryId: null,
-                constraints: null,
+                templateType: null,
               ),
               ElevatedButton(
                   onPressed: showRewardedAd,
