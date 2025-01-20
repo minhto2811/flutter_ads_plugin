@@ -150,6 +150,7 @@ Display Interstitial Ads:
 | **factoryId**     | Unique ID for the ad **factory** instance.       |
 | **templateStyle** | Defines the **visual style** of the ad template. |
 | **constraints**   | Layout **constraints** for rendering the ad.     |
+| **templateType**  | Type of the native ad template.                  |
 
 ---
 

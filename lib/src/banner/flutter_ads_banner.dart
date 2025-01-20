@@ -14,7 +14,8 @@ class FlutterAdsBanner extends StatefulWidget {
   State<FlutterAdsBanner> createState() => _FlutterAdsBannerState();
 }
 
-class _FlutterAdsBannerState extends State<FlutterAdsBanner> {
+class _FlutterAdsBannerState extends State<FlutterAdsBanner>
+    with AutomaticKeepAliveClientMixin {
   final _bloc = BannerBloc();
 
   @override
@@ -35,6 +36,7 @@ class _FlutterAdsBannerState extends State<FlutterAdsBanner> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<BannerBloc, BannerState>(
       bloc: _bloc,
       buildWhen: (previous, current) => current is LoadBannerState,
@@ -50,4 +52,7 @@ class _FlutterAdsBannerState extends State<FlutterAdsBanner> {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

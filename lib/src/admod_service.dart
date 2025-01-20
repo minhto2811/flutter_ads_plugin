@@ -74,6 +74,7 @@ class AdModService {
     String? androidId,
     String? factoryId,
     NativeTemplateStyle? templateStyle,
+    TemplateType? templateType,
   }) async {
     final adCompleter = Completer<Ad?>();
     NativeAd(
@@ -95,7 +96,7 @@ class AdModService {
             nativeTemplateStyle: templateStyle ??
                 NativeTemplateStyle(
                     // Required: Choose a template.
-                    templateType: TemplateType.medium,
+                    templateType: templateType ?? TemplateType.medium,
                     // Optional: Customize the ad's style.
                     mainBackgroundColor: Colors.purple,
                     cornerRadius: 10.0,

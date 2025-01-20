@@ -9,12 +9,14 @@ final class InitialEvent extends NativeAdEvent {
   final String? androidId;
   final String? factoryId;
   final NativeTemplateStyle? templateStyle;
+  final TemplateType? templateType;
 
   const InitialEvent({
     this.iosId,
     this.androidId,
     this.factoryId,
     this.templateStyle,
+    this.templateType,
   });
 
   @override

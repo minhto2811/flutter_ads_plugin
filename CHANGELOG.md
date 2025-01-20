@@ -50,3 +50,7 @@
 * Fix: (3) -> Fetching podspec for `flutter_ads_plugin` from
   `.symlinks/plugins/flutter_ads_plugin/ios`
   [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
+
+## 0.0.13
+
+* Update: Add TemplateType to NativeAd

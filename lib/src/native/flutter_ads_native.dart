@@ -11,19 +11,22 @@ class FlutterAdsNative extends StatefulWidget {
       this.androidId,
       this.factoryId,
       this.templateStyle,
-      this.constraints});
+      this.constraints,
+      this.templateType});
 
   final String? iosId;
   final String? androidId;
   final String? factoryId;
   final NativeTemplateStyle? templateStyle;
   final BoxConstraints? constraints;
+  final TemplateType? templateType;
 
   @override
   State<FlutterAdsNative> createState() => _FlutterAdsNativeState();
 }
 
-class _FlutterAdsNativeState extends State<FlutterAdsNative> {
+class _FlutterAdsNativeState extends State<FlutterAdsNative>
+    with AutomaticKeepAliveClientMixin {
   final _bloc = NativeAdBloc();
 
   @override
@@ -33,7 +36,8 @@ class _FlutterAdsNativeState extends State<FlutterAdsNative> {
         templateStyle: widget.templateStyle,
         iosId: widget.iosId,
         androidId: widget.androidId,
-        factoryId: widget.factoryId));
+        factoryId: widget.factoryId,
+        templateType: widget.templateType));
   }
 
   @override
@@ -44,6 +48,7 @@ class _FlutterAdsNativeState extends State<FlutterAdsNative> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<NativeAdBloc, NativeAdState>(
         bloc: _bloc,
         buildWhen: (previous, current) => current is NativeAdLoadedState,
@@ -63,4 +68,7 @@ class _FlutterAdsNativeState extends State<FlutterAdsNative> {
           return const SizedBox.shrink();
         });
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
