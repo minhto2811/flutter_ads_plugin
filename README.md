@@ -72,30 +72,36 @@ Initialize Mobile Ads in your `main.dart` file:
 
 ```dart
   void main() {
-    WidgetsFlutterBinding.ensureInitialized();
-    MobileAds.instance.initialize();
-    runApp(const MyApp());
-  }
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+  runApp(const MyApp());
+}
 ```
 
 Display banner ads:
 
 ```dart
-  FlutterAdsBanner(
-    iosId: '',
-    androidId: '',
-  )
+  FlutterAdsBanner
+(
+iosId: '',
+androidId: '',
+)
 ```
 
 Display native ads:
 
 ```dart
-  FlutterAdsNative(
-    androidId: '',
-    iosId: '',
-    templateStyle: null,
-    factoryId: null,
-    templateType: null,
+  FlutterAdsNative
+(
+androidId: '',
+iosId: '',
+templateStyle: null,
+factoryId: null,
+templateType: null,
+constraints
+:
+null
+,
 )
 ```
 
@@ -103,36 +109,37 @@ Display Rewarded Ads:
 
 ```dart
   showRewardedAd() {
-    FlutterAdsRewarded.show(
+  FlutterAdsRewarded.show(
       androidId: '',
       iosId: '',
       onUserEarnedReward: (view, item) {
-      //TODO
+        //TODO
       },
       onError: (e) {
-      //TODO
+        //TODO
       },
       onClose: () {
-      //TODO
+        //TODO
       });
-  }
+}
 ```
 
 Display Interstitial Ads:
 
 ```dart
   showInterstitialAd() {
-    FlutterAdsInterstitial.show(
-        androidId: '',
-        iosId: '',
-        onError: (e) {
-          //TODO
-        },
-        onClose: () {
-          //TODO
-        });
-  }
+  FlutterAdsInterstitial.show(
+      androidId: '',
+      iosId: '',
+      onError: (e) {
+        //TODO
+      },
+      onClose: () {
+        //TODO
+      });
+}
 ```
+
 --- 
 
 ## 📝 API Reference
@@ -150,6 +157,7 @@ Display Interstitial Ads:
 | **factoryId**     | Unique ID for the ad **factory** instance.       |
 | **templateStyle** | Defines the **visual style** of the ad template. |
 | **templateType**  | Type of the native ad template.                  |
+| **constraints**   | Constraints for the native ad.                   |
 
 ---
 
@@ -222,6 +230,7 @@ class _MyAppState extends State<MyApp> {
                 templateStyle: null,
                 factoryId: null,
                 templateType: null,
+                constraints: null,
               ),
               ElevatedButton(
                   onPressed: showRewardedAd,

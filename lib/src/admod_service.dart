@@ -96,7 +96,7 @@ class AdModService {
             nativeTemplateStyle: templateStyle ??
                 NativeTemplateStyle(
                     // Required: Choose a template.
-                    templateType: templateType ?? TemplateType.medium,
+                    templateType: templateType ?? TemplateType.small,
                     // Optional: Customize the ad's style.
                     mainBackgroundColor: Colors.purple,
                     cornerRadius: 10.0,

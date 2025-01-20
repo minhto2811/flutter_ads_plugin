@@ -11,12 +11,14 @@ class FlutterAdsNative extends StatefulWidget {
       this.androidId,
       this.factoryId,
       this.templateStyle,
+      this.constraints,
       this.templateType});
 
   final String? iosId;
   final String? androidId;
   final String? factoryId;
   final NativeTemplateStyle? templateStyle;
+  final BoxConstraints? constraints;
   final TemplateType? templateType;
 
   @override
@@ -52,7 +54,24 @@ class _FlutterAdsNativeState extends State<FlutterAdsNative>
         buildWhen: (previous, current) => current is NativeAdLoadedState,
         builder: (context, state) {
           if (state is NativeAdLoadedState) {
-            return AdWidget(ad: state.nativeAd);
+            final constraints = widget.constraints ??
+                (widget.templateType == TemplateType.small
+                    ? const BoxConstraints(
+                        minWidth: 320, // minimum recommended width
+                        minHeight: 90, // minimum recommended height
+                        maxWidth: 400,
+                        maxHeight: 200,
+                      )
+                    : const BoxConstraints(
+                        minWidth: 320, // minimum recommended width
+                        minHeight: 320, // minimum recommended height
+                        maxWidth: 400,
+                        maxHeight: 400,
+                      ));
+            return ConstrainedBox(
+              constraints: constraints,
+              child: AdWidget(ad: state.nativeAd),
+            );
           }
           return const SizedBox.shrink();
         });
