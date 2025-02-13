@@ -1,28 +1,38 @@
-## 0.0.1
+## 0.1.1
 
-* Plugin release.
+* Update: `flutter_bloc: ^9.0.0, equatable: ^2.0.7, google_mobile_ads: ^5.3.1`
 
-## 0.0.2
+## 0.0.15
 
-* Fix: path not found error.
+* Update: Add Attribute `constraints` in NativeAd
 
-## 0.0.3
+## 0.0.14
 
-* Update instructions
+* Update: Remove Attribute `constraints` in NativeAd, (Replace 'templateStyle' to NativeAd)
 
-## 0.0.4
+## 0.0.13
 
-* Update: Lazy Initialization, Limit access to functions and variables
+* Update: Add TemplateType to NativeAd
 
-## 0.0.5
+## 0.0.12
 
-* Update: Usage Example
+* Fix: (3) -> Fetching podspec for `flutter_ads_plugin` from  
+  `.symlinks/plugins/flutter_ads_plugin/ios`  
+  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
 
-## 0.0.6
+## 0.0.11
 
-* Update: Usage Example
+* Fix: (2) -> Fetching podspec for `flutter_ads_plugin` from  
+  `.symlinks/plugins/flutter_ads_plugin/ios`  
+  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
 
-## 0.0.7
+## 0.0.10
+
+* Fix: -> Fetching podspec for `flutter_ads_plugin` from  
+  `.symlinks/plugins/flutter_ads_plugin/ios`  
+  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
+
+## 0.0.9
 
 * Update: API Reference
 
@@ -30,35 +40,30 @@
 
 * Fix some bugs
 
-## 0.0.9
+## 0.0.7
 
 * Update: API Reference
 
-## 0.0.10
+## 0.0.6
 
-* Fix:  -> Fetching podspec for `flutter_ads_plugin` from `.symlinks/plugins/flutter_ads_plugin/ios`
-  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
+* Update: Usage Example
 
-## 0.0.11
+## 0.0.5
 
-* Fix: (2) -> Fetching podspec for `flutter_ads_plugin` from
-  `.symlinks/plugins/flutter_ads_plugin/ios`
-  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
+* Update: Usage Example
 
-## 0.0.12
+## 0.0.4
 
-* Fix: (3) -> Fetching podspec for `flutter_ads_plugin` from
-  `.symlinks/plugins/flutter_ads_plugin/ios`
-  [!] No podspec found for `flutter_ads_plugin` in `.symlinks/plugins/flutter_ads_plugin/ios`
+* Update: Lazy Initialization, Limit access to functions and variables
 
-## 0.0.13
+## 0.0.3
 
-* Update: Add TemplateType to NativeAd
+* Update instructions
 
-## 0.0.14
+## 0.0.2
 
-* Update: Remove Attribute `constraints` in NativeAd, (Replace 'templateStyle' to NativeAd)
+* Fix: path not found error
 
-## 0.0.15
+## 0.0.1
 
-* Update: Add Attribute `constraints` in NativeAd
+* Plugin release.
