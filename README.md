@@ -74,6 +74,7 @@ Initialize Mobile Ads in your `main.dart` file:
   void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
+  FlutterAdsInterstitial.load();
   runApp(const MyApp());
 }
 ```
@@ -108,7 +109,7 @@ null
 Display Rewarded Ads:
 
 ```dart
-  showRewardedAd() {
+showRewardedAd() {
   FlutterAdsRewarded.show(
       androidId: '',
       iosId: '',
@@ -120,23 +121,15 @@ Display Rewarded Ads:
       },
       onClose: () {
         //TODO
-      });
+   });
 }
 ```
 
 Display Interstitial Ads:
 
 ```dart
-  showInterstitialAd() {
-  FlutterAdsInterstitial.show(
-      androidId: '',
-      iosId: '',
-      onError: (e) {
-        //TODO
-      },
-      onClose: () {
-        //TODO
-      });
+showInterstitialAd() {
+  FlutterAdsInterstitial.show();
 }
 ```
 
@@ -181,6 +174,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  
+  
+  @override
+  void initState() {
+    FlutterAdsInterstitial.load();
+    super.initState();
+  }
+  
+  
+  @override
+  void dispose() {
+    FlutterAdsInterstitial.release();
+    super.dispose();
+  }
+  
+  
   showRewardedAd() {
     FlutterAdsRewarded.show(
         androidId: '',
@@ -197,15 +206,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   showInterstitialAd() {
-    FlutterAdsInterstitial.show(
-        androidId: '',
-        iosId: '',
-        onError: (e) {
-          //TODO
-        },
-        onClose: () {
-          //TODO
-        });
+    FlutterAdsInterstitial.show();
   }
 
   @override

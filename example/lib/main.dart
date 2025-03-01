@@ -15,6 +15,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    FlutterAdsInterstitial.load();
+    super.initState();
+  }
+
+
+  @override
+  void dispose() {
+    FlutterAdsInterstitial.release();
+    super.dispose();
+  }
+
   showRewardedAd() {
     FlutterAdsRewarded.show(
         androidId: '',
@@ -31,15 +45,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   showInterstitialAd() {
-    FlutterAdsInterstitial.show(
-        androidId: '',
-        iosId: '',
-        onError: (e) {
-          //TODO
-        },
-        onClose: () {
-          //TODO
-        });
+    FlutterAdsInterstitial.show();
   }
 
   @override

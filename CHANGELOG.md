@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Update: `FlutterAdsInterstitial`
+
 ## 0.1.1
 
 * Update: `flutter_bloc: ^9.0.0, equatable: ^2.0.7, google_mobile_ads: ^5.3.1`
