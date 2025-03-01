@@ -65,16 +65,15 @@ flutter pub get
 To use the plugin, import the `flutter_ads_plugin` package in your Flutter app:
 
 ```dart
-  import 'package:flutter_ads_plugin/flutter_ads_plugin.dart';
+import 'package:flutter_ads_plugin/flutter_ads_plugin.dart';
 ```
 
 Initialize Mobile Ads in your `main.dart` file:
 
 ```dart
-  void main() {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
-  FlutterAdsInterstitial.load();
   runApp(const MyApp());
 }
 ```
@@ -82,52 +81,40 @@ Initialize Mobile Ads in your `main.dart` file:
 Display banner ads:
 
 ```dart
-  FlutterAdsBanner
-(
-iosId: '',
-androidId: '',
+FlutterAdsBanner(
+  iosId: '',
+  androidId: '',
 )
 ```
 
 Display native ads:
 
 ```dart
-  FlutterAdsNative
-(
-androidId: '',
-iosId: '',
-templateStyle: null,
-factoryId: null,
-templateType: null,
-constraints
-:
-null
-,
+FlutterAdsNative(
+  androidId: '',
+  iosId: '',
+  templateStyle: null,
+  factoryId: null,
+  templateType: null,
+  constraints:null,
 )
 ```
 
 Display Rewarded Ads:
 
 ```dart
-showRewardedAd() {
-  FlutterAdsRewarded.show(
-      androidId: '',
-      iosId: '',
-      onUserEarnedReward: (view, item) {
-        //TODO
-      },
-      onError: (e) {
-        //TODO
-      },
-      onClose: () {
-        //TODO
-   });
+FlutterAdsRewarded.init();
+
+showInterstitialAd() {
+  FlutterAdsInterstitial.show();
 }
 ```
 
 Display Interstitial Ads:
 
 ```dart
+FlutterAdsInterstitial.load();
+
 showInterstitialAd() {
   FlutterAdsInterstitial.show();
 }
@@ -178,7 +165,8 @@ class _MyAppState extends State<MyApp> {
   
   @override
   void initState() {
-    FlutterAdsInterstitial.load();
+    FlutterAdsInterstitial.init();
+    FlutterAdsRewarded.init();
     super.initState();
   }
   
@@ -186,23 +174,13 @@ class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
     FlutterAdsInterstitial.release();
+    FlutterAdsRewarded.release();
     super.dispose();
   }
-  
-  
-  showRewardedAd() {
-    FlutterAdsRewarded.show(
-        androidId: '',
-        iosId: '',
-        onUserEarnedReward: (view, item) {
-          //TODO
-        },
-        onError: (e) {
-          //TODO
-        },
-        onClose: () {
-          //TODO
-        });
+
+
+  showInterstitialAd() {
+    FlutterAdsInterstitial.show();
   }
 
   showInterstitialAd() {

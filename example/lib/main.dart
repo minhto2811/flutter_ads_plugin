@@ -18,7 +18,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    FlutterAdsInterstitial.load();
+    FlutterAdsInterstitial.init();
+    FlutterAdsRewarded.init();
     super.initState();
   }
 
@@ -26,22 +27,12 @@ class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
     FlutterAdsInterstitial.release();
+    FlutterAdsRewarded.release();
     super.dispose();
   }
 
   showRewardedAd() {
-    FlutterAdsRewarded.show(
-        androidId: '',
-        iosId: '',
-        onUserEarnedReward: (view, item) {
-          //TODO
-        },
-        onError: (e) {
-          //TODO
-        },
-        onClose: () {
-          //TODO
-        });
+    FlutterAdsRewarded.show(onUserEarnedReward: (view, item) {});
   }
 
   showInterstitialAd() {
