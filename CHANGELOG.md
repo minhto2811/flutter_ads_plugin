@@ -1,3 +1,8 @@
+## 0.2.1
+
+* Update: dependencies `flutter_bloc: ^9.1.0`
+
+
 ## 0.1.3
 
 * Update: `FlutterAdsRewarded`
