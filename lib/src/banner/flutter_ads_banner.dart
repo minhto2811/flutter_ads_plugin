@@ -4,10 +4,28 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'bloc/banner_bloc.dart';
 
+///Banner ad:
 class FlutterAdsBanner extends StatefulWidget {
   const FlutterAdsBanner({super.key, this.iosId, this.androidId});
 
+  ///[Product] The parameters [iosId] or [androidId] are required in the production
+  ///environment, depending on the target platform.
+  ///[Debug] In the debug environment, you can choose to provide or omit the
+  ///parameters, as they are already set with test IDs
+  ///[Staging] In the staging environment, you need to manually set test IDs for each
+  ///target platform. I have provided the IDs below; simply copy and set the appropriate one.
+  ///[androidId] 'ca-app-pub-3940256099942544/6300978111'
+  /// [iosId] 'ca-app-pub-3940256099942544/2934735716'
   final String? iosId;
+
+  ///[Product] The parameters [iosId] or [androidId] are required in the production
+  ///environment, depending on the target platform.
+  ///[Debug] In the debug environment, you can choose to provide or omit the
+  ///parameters, as they are already set with test IDs
+  ///[Staging] In the staging environment, you need to manually set test IDs for each
+  ///target platform. I have provided the IDs below; simply copy and set the appropriate one.
+  ///[androidId] 'ca-app-pub-3940256099942544/6300978111'
+  /// [iosId] 'ca-app-pub-3940256099942544/2934735716'
   final String? androidId;
 
   @override

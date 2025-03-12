@@ -4,6 +4,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'bloc/native_ad_bloc.dart';
 
+///Native ad
 class FlutterAdsNative extends StatefulWidget {
   const FlutterAdsNative(
       {super.key,
@@ -14,11 +15,37 @@ class FlutterAdsNative extends StatefulWidget {
       this.constraints,
       this.templateType});
 
+
+  ///[Product] The parameters [iosId] or [androidId] are required in the production
+  ///environment, depending on the target platform.
+  ///[Debug] In the debug environment, you can choose to provide or omit the
+  ///parameters, as they are already set with test IDs
+  ///[Staging] In the staging environment, you need to manually set test IDs for each
+  ///target platform. I have provided the IDs below; simply copy and set the appropriate one.
+  ///[androidId] 'ca-app-pub-3940256099942544/2247696110'
+  /// [iosId] 'ca-app-pub-3940256099942544/3986624511'
   final String? iosId;
+
+  ///[Product] The parameters [iosId] or [androidId] are required in the production
+  ///environment, depending on the target platform.
+  ///[Debug] In the debug environment, you can choose to provide or omit the
+  ///parameters, as they are already set with test IDs
+  ///[Staging] In the staging environment, you need to manually set test IDs for each
+  ///target platform. I have provided the IDs below; simply copy and set the appropriate one.
+  ///[androidId] 'ca-app-pub-3940256099942544/2247696110'
+  /// [iosId] 'ca-app-pub-3940256099942544/3986624511'
   final String? androidId;
+
+  ///[factoryId] Factory ID for creating the Native Ad view
   final String? factoryId;
+
+  ///[templateStyle] Template style for the ad (if any)
   final NativeTemplateStyle? templateStyle;
+
+  ///[constraints] Size constraints for the ad
   final BoxConstraints? constraints;
+
+  ///[templateType] Template type for the ad (e.g., small, medium)
   final TemplateType? templateType;
 
   @override

@@ -4,7 +4,18 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../admod_service.dart';
 
+///Reward ad
 class FlutterAdsRewarded {
+
+  ///Preload ad:
+  ///[Product] The parameters [iosId] or [androidId] are required in the production
+  ///environment, depending on the target platform.
+  ///[Debug] In the debug environment, you can choose to provide or omit the
+  ///parameters, as they are already set with test IDs
+  ///[Staging] In the staging environment, you need to manually set test IDs for each
+  ///target platform. I have provided the IDs below; simply copy and set the appropriate one.
+  ///[androidId] 'ca-app-pub-3940256099942544/5224354917'
+  /// [iosId] 'ca-app-pub-3940256099942544/1712485313'
   static void init({
     String? iosId,
     String? androidId,
@@ -25,8 +36,11 @@ class FlutterAdsRewarded {
     );
   }
 
+  ///Release Ad
   static void release() => _ad?.dispose();
 
+
+  ///Show Ad
   static Future<bool> show(
       {required OnUserEarnedRewardCallback onUserEarnedReward}) async {
     final completer = Completer<bool>();

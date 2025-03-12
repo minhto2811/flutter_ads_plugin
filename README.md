@@ -81,23 +81,13 @@ void main() {
 Display banner ads:
 
 ```dart
-FlutterAdsBanner(
-  iosId: '',
-  androidId: '',
-)
+FlutterAdsBanner()
 ```
 
 Display native ads:
 
 ```dart
-FlutterAdsNative(
-  androidId: '',
-  iosId: '',
-  templateStyle: null,
-  factoryId: null,
-  templateType: null,
-  constraints:null,
-)
+FlutterAdsNative()
 ```
 
 Display Rewarded Ads:
@@ -105,19 +95,19 @@ Display Rewarded Ads:
 ```dart
 FlutterAdsRewarded.init();
 
-showInterstitialAd() {
-  FlutterAdsInterstitial.show();
-}
+FlutterAdsRewarded.show();
+
+FlutterAdsRewarded.release();
 ```
 
 Display Interstitial Ads:
 
 ```dart
-FlutterAdsInterstitial.load();
+FlutterAdsInterstitial.init();
 
-showInterstitialAd() {
-  FlutterAdsInterstitial.show();
-}
+FlutterAdsInterstitial.show();
+
+FlutterAdsInterstitial.release();
 ```
 
 --- 
