@@ -15,14 +15,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     FlutterAdsInterstitial.init();
     FlutterAdsRewarded.init();
     super.initState();
   }
-
 
   @override
   void dispose() {
@@ -46,8 +44,7 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text('Plugin example app'),
           ),
-          body: Column(
-            mainAxisSize: MainAxisSize.max,
+          body: ListView(
             children: [
               const SizedBox(height: 24),
               const FlutterAdsBanner(
@@ -55,13 +52,8 @@ class _MyAppState extends State<MyApp> {
                 androidId: '',
               ),
               const SizedBox(height: 24),
-              const FlutterAdsNative(
-                androidId: '',
-                iosId: '',
-                templateStyle: null,
-                factoryId: null,
-                templateType: null,
-              ),
+              const FlutterAdsNative(),
+              const SizedBox(height: 24),
               ElevatedButton(
                   onPressed: showRewardedAd,
                   child: const Text('Show Rewarded Ad')),

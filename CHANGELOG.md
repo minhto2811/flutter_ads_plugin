@@ -1,3 +1,9 @@
+## 0.2.2
+
+* Update: `NativeAd` Update the default constraint value
+`TemplateType.small` -> `const BoxConstraints(maxHeight: 100, maxWidth: 1000)`
+`TemplateType.medium` -> `const BoxConstraints(maxHeight: 200, maxWidth: 1000)`
+
 ## 0.2.1
 
 * Update: dependencies `flutter_bloc: ^9.1.0`

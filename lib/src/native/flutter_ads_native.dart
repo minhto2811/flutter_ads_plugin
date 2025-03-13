@@ -15,7 +15,6 @@ class FlutterAdsNative extends StatefulWidget {
       this.constraints,
       this.templateType});
 
-
   ///[Product] The parameters [iosId] or [androidId] are required in the production
   ///environment, depending on the target platform.
   ///[Debug] In the debug environment, you can choose to provide or omit the
@@ -84,16 +83,12 @@ class _FlutterAdsNativeState extends State<FlutterAdsNative>
             final constraints = widget.constraints ??
                 (widget.templateType == TemplateType.small
                     ? const BoxConstraints(
-                        minWidth: 320, // minimum recommended width
-                        minHeight: 90, // minimum recommended height
-                        maxWidth: 400,
-                        maxHeight: 200,
+                        maxHeight: 100,
+                        maxWidth: 1000,
                       )
                     : const BoxConstraints(
-                        minWidth: 320, // minimum recommended width
-                        minHeight: 320, // minimum recommended height
-                        maxWidth: 400,
-                        maxHeight: 400,
+                        maxHeight: 200,
+                        maxWidth: 1000,
                       ));
             return ConstrainedBox(
               constraints: constraints,
