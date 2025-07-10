@@ -78,36 +78,82 @@ void main() {
 }
 ```
 
+Display Rewarded Ads:
+
+```dart
+FlutterAdsAppOpen.init
+(
+{
+String
+?
+iosId
+,
+String
+?
+androidId
+,
+bool
+isShowWhenReady = false
+,Duration maxCacheDuration = const Duration(hours: 4),
+bool
+shouldShowAdOnAppResume
+=
+false
+,
+}
+);
+```
+
 Display banner ads:
 
 ```dart
-FlutterAdsBanner()
+FlutterAdsBanner
+({
+String? iosId,
+String? androidId
+})
 ```
 
 Display native ads:
 
 ```dart
-FlutterAdsNative()
+FlutterAdsNative
+({
+String? iosId,
+String? androidId
+})
 ```
 
 Display Rewarded Ads:
 
 ```dart
-FlutterAdsRewarded.init();
+FlutterAdsRewarded.init
+({
+String? iosId,
+String? androidId
+});
 
-FlutterAdsRewarded.show();
+FlutterAdsRewarded.show
+();
 
-FlutterAdsRewarded.release();
+FlutterAdsRewarded.release
+();
 ```
 
 Display Interstitial Ads:
 
 ```dart
-FlutterAdsInterstitial.init();
+FlutterAdsInterstitial.init
+({
+String? iosId,
+String? androidId
+});
 
-FlutterAdsInterstitial.show();
+FlutterAdsInterstitial.show
+();
 
-FlutterAdsInterstitial.release();
+FlutterAdsInterstitial.release
+();
 ```
 
 --- 
@@ -120,14 +166,18 @@ FlutterAdsInterstitial.release();
 | **onError**            | Callback triggered when an error occurs during ad loading or rendering. |                         |
 | **onClose**            | Callback triggered when the ad is closed by the user.                   |
 
-| Setter            | Description                                      |
-|-------------------|--------------------------------------------------|
-| **androidId**     | Identifier for **Android** configurations.       |
-| **iosId**         | Identifier for **iOS** configurations.           |
-| **factoryId**     | Unique ID for the ad **factory** instance.       |
-| **templateStyle** | Defines the **visual style** of the ad template. |
-| **templateType**  | Type of the native ad template.                  |
-| **constraints**   | Constraints for the native ad.                   |
+| Setter                      | Description                                                            |
+|-----------------------------|------------------------------------------------------------------------|
+| **androidId**               | Identifier for **Android** configurations.                             |
+| **iosId**                   | Identifier for **iOS** configurations.                                 |
+| **factoryId**               | Unique ID for the ad **factory** instance.                             |
+| **templateStyle**           | Defines the **visual style** of the ad template.                       |
+| **templateType**            | Type of the native ad template.                                        |
+| **constraints**             | Constraints for the native ad.                                         |
+| **isShowWhenReady**         | Show the ad immediately after it's loaded (default: false).            |
+| **shouldShowAdOnAppResume** | Show ad automatically when app returns to foreground (default: false). |
+| **maxCacheDuration**        | 	Maximum time an ad is cached before being refreshed (default: 4h).    
+|
 
 ---
 
@@ -151,16 +201,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
-  
+
+
   @override
   void initState() {
     FlutterAdsInterstitial.init();
     FlutterAdsRewarded.init();
+    FlutterAdsAppOpen.init();
     super.initState();
   }
-  
-  
+
+
   @override
   void dispose() {
     FlutterAdsInterstitial.release();

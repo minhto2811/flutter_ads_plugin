@@ -19,6 +19,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     FlutterAdsInterstitial.init();
     FlutterAdsRewarded.init();
+    FlutterAdsAppOpen.init(
+        isShowWhenReady: true, shouldShowAdOnAppResume: true);
     super.initState();
   }
 

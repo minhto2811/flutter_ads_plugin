@@ -1,3 +1,11 @@
+## 1.0.0
+
+* Update: Add `App Open Ads - FlutterAdsAppOpen`
+
+## 0.2.4
+
+* Update: `google_mobile_ads: ^6.0.0`
+
 ## 0.2.3
 
 * Clean

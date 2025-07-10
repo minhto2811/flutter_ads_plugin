@@ -8,6 +8,13 @@ class AdModConstant {
 
   AdModConstant._internal();
 
+  String getAppOpenAdMobId({String? iosId, String? androidId}) => _initAdModId(
+        kDebugAndroidId: 'ca-app-pub-3940256099942544/9257395921',
+        kDebugIosId: 'ca-app-pub-3940256099942544/5575463023',
+        kReleaseAndroidId: androidId ?? '',
+        kReleaseIosId: iosId ?? '',
+      );
+
   String getRewardedAdMobId({String? iosId, String? androidId}) => _initAdModId(
         kDebugAndroidId: 'ca-app-pub-3940256099942544/5224354917',
         kDebugIosId: 'ca-app-pub-3940256099942544/1712485313',
@@ -49,7 +56,7 @@ class AdModConstant {
       } else if (Platform.isIOS) {
         return kReleaseIosId;
       } else {
-        throw UnsupportedError("Unsupport platform");
+        throw UnsupportedError("Unsupported platform");
       }
     } else {
       if (Platform.isAndroid) {
@@ -57,7 +64,7 @@ class AdModConstant {
       } else if (Platform.isIOS) {
         return kDebugIosId;
       } else {
-        throw UnsupportedError("Unsupport platform");
+        throw UnsupportedError("Unsupported platform");
       }
     }
   }

@@ -12,6 +12,21 @@ class AdModService {
 
   AdModService._internal();
 
+  Future<AppOpenAd?> getAppOpenAd({String? iosId, String? androidId}) async {
+    final adCompleter = Completer<AppOpenAd?>();
+    AppOpenAd.load(
+      adUnitId:
+          AdModConstant().getAppOpenAdMobId(iosId: iosId, androidId: androidId),
+      request: const AdRequest(),
+      adLoadCallback: AppOpenAdLoadCallback(
+        onAdLoaded: adCompleter.complete,
+        onAdFailedToLoad: adCompleter.completeError,
+      ),
+    );
+    final appOpenAd = await adCompleter.future;
+    return appOpenAd;
+  }
+
   Future<BannerAd?> getBannerAd(
       {required BuildContext context, String? iosId, String? androidId}) async {
     final size = await AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(

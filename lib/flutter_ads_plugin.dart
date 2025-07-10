@@ -5,3 +5,4 @@ export '../src/banner/flutter_ads_banner.dart';
 export '../src/interstitial/flutter_ads_interstitial.dart';
 export '../src/native/flutter_ads_native.dart';
 export '../src/rewarded/flutter_ads_rewarded.dart';
+export '../src/app_open/flutter_ads_app_open.dart';
