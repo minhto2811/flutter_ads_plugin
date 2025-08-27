@@ -1,3 +1,11 @@
+## 1.0.2
+
+* Update: Update `await FlutterAdsAppOpen.init()`
+
+## 1.0.1
+
+* Update: Add `FlutterAdsAppOpen.dispose`
+
 ## 1.0.0
 
 * Update: Add `App Open Ads - FlutterAdsAppOpen`

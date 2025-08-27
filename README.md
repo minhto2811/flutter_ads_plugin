@@ -18,6 +18,7 @@ with minimal effort. No complex configurations required.
     - Interstitial Ads
     - Rewarded Ads
     - Native Ads
+    - App Open Ads
 
 ---  
 
@@ -78,37 +79,24 @@ void main() {
 }
 ```
 
-Display Rewarded Ads:
+Display App Open Ads:
 
 ```dart
-FlutterAdsAppOpen.init
-(
-{
-String
-?
-iosId
-,
-String
-?
-androidId
-,
-bool
-isShowWhenReady = false
-,Duration maxCacheDuration = const Duration(hours: 4),
-bool
-shouldShowAdOnAppResume
-=
-false
-,
-}
-);
+FlutterAdsAppOpen.init({
+String? iosId,
+String? androidId,
+bool isShowWhenReady = false,
+Duration maxCacheDuration = const Duration(hours: 4),
+bool shouldShowAdOnAppResume = false,
+});
+
+FlutterAdsAppOpen.dispose();
 ```
 
 Display banner ads:
 
 ```dart
-FlutterAdsBanner
-({
+FlutterAdsBanner({
 String? iosId,
 String? androidId
 })
@@ -117,8 +105,7 @@ String? androidId
 Display native ads:
 
 ```dart
-FlutterAdsNative
-({
+FlutterAdsNative({
 String? iosId,
 String? androidId
 })
@@ -127,33 +114,27 @@ String? androidId
 Display Rewarded Ads:
 
 ```dart
-FlutterAdsRewarded.init
-({
+FlutterAdsRewarded.init({
 String? iosId,
 String? androidId
 });
 
-FlutterAdsRewarded.show
-();
+FlutterAdsRewarded.show();
 
-FlutterAdsRewarded.release
-();
+FlutterAdsRewarded.release();
 ```
 
 Display Interstitial Ads:
 
 ```dart
-FlutterAdsInterstitial.init
-({
+FlutterAdsInterstitial.init({
 String? iosId,
 String? androidId
 });
 
-FlutterAdsInterstitial.show
-();
+FlutterAdsInterstitial.show();
 
-FlutterAdsInterstitial.release
-();
+FlutterAdsInterstitial.release();
 ```
 
 --- 
