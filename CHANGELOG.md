@@ -1,4 +1,11 @@
-## 1.0.2
+## 2.0.0
+
+### ✨ Update
+- Improved ad loading management with better lifecycle handling
+- Optimized singleton pattern for ad instances
+- Added loading state to prevent multiple simultaneous ad loads
+- Enhanced error handling for disposed or invalid ads
+- Minor performance and stability improvements
 
 * Update: Update `await FlutterAdsAppOpen.init()`
 

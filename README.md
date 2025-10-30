@@ -114,27 +114,27 @@ String? androidId
 Display Rewarded Ads:
 
 ```dart
-FlutterAdsRewarded.init({
+FlutterAdsRewarded().init({
 String? iosId,
 String? androidId
 });
 
-FlutterAdsRewarded.show();
+FlutterAdsRewarded().show();
 
-FlutterAdsRewarded.release();
+FlutterAdsRewarded().release();
 ```
 
 Display Interstitial Ads:
 
 ```dart
-FlutterAdsInterstitial.init({
+FlutterAdsInterstitial().init({
 String? iosId,
 String? androidId
 });
 
-FlutterAdsInterstitial.show();
+FlutterAdsInterstitial().show();
 
-FlutterAdsInterstitial.release();
+FlutterAdsInterstitial().release();
 ```
 
 --- 
@@ -186,8 +186,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    FlutterAdsInterstitial.init();
-    FlutterAdsRewarded.init();
+    FlutterAdsInterstitial().init();
+    FlutterAdsRewarded().init();
     FlutterAdsAppOpen.init();
     super.initState();
   }
@@ -195,18 +195,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-    FlutterAdsInterstitial.release();
-    FlutterAdsRewarded.release();
+    FlutterAdsInterstitial().release();
+    FlutterAdsRewarded().release();
     super.dispose();
   }
 
 
   showInterstitialAd() {
-    FlutterAdsInterstitial.show();
+    FlutterAdsInterstitial().show();
   }
 
   showInterstitialAd() {
-    FlutterAdsInterstitial.show();
+    FlutterAdsInterstitial().show();
   }
 
   @override

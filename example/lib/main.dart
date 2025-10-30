@@ -17,8 +17,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    FlutterAdsInterstitial.init();
-    FlutterAdsRewarded.init();
+    FlutterAdsInterstitial().init();
+    FlutterAdsRewarded().init();
     FlutterAdsAppOpen.init(
         isShowWhenReady: true, shouldShowAdOnAppResume: true);
     super.initState();
@@ -26,17 +26,17 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-    FlutterAdsInterstitial.release();
-    FlutterAdsRewarded.release();
+    FlutterAdsInterstitial().release();
+    FlutterAdsRewarded().release();
     super.dispose();
   }
 
   showRewardedAd() {
-    FlutterAdsRewarded.show(onUserEarnedReward: (view, item) {});
+    FlutterAdsRewarded().show(onUserEarnedReward: (view, item) {});
   }
 
   showInterstitialAd() {
-    FlutterAdsInterstitial.show();
+    FlutterAdsInterstitial().show();
   }
 
   @override
