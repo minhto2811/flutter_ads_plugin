@@ -5,8 +5,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 /// A singleton service for managing Interstitial Ads.
 /// Supports auto-preload, safe disposal, and retry on failure.
 class FlutterAdsInterstitial {
-
   static FlutterAdsInterstitial? _instance;
+
   FlutterAdsInterstitial._internal();
 
   factory FlutterAdsInterstitial() {
@@ -20,14 +20,13 @@ class FlutterAdsInterstitial {
   bool _isLoading = false;
 
   // --- Initialization ---
-  Future<void> init({String? iosId, String? androidId}) async {
+  void init({String? iosId, String? androidId}) {
     _iosId = iosId;
     _androidId = androidId;
-    await _load();
   }
 
   // --- Internal loader ---
-  Future<void> _load() async {
+  Future<void> load() async {
     if (_isLoading) return;
     _isLoading = true;
 
@@ -48,8 +47,8 @@ class FlutterAdsInterstitial {
   }
 
   // --- Release all resources ---
-  void release() {
-    _ad?.dispose();
+  Future<void> release() async {
+    await _ad?.dispose();
     _ad = null;
   }
 
@@ -58,7 +57,7 @@ class FlutterAdsInterstitial {
     final completer = Completer<bool>();
 
     // If ad not ready, reload
-    if (_ad == null) await _load();
+    if (_ad == null) await load();
 
     // Still not ready after loading
     if (_ad == null) {
@@ -70,15 +69,13 @@ class FlutterAdsInterstitial {
       onAdShowedFullScreenContent: (ad) {},
       onAdDismissedFullScreenContent: (ad) {
         ad.dispose();
-        _ad = null;
+        release();
         completer.complete(true);
-        _load(); // Preload next ad
       },
       onAdFailedToShowFullScreenContent: (ad, error) {
         ad.dispose();
-        _ad = null;
+        release();
         completer.completeError('Ad failed to show: $error');
-        _load(); // Retry preload
       },
     );
 
@@ -87,7 +84,7 @@ class FlutterAdsInterstitial {
     } catch (e) {
       _ad = null;
       completer.completeError('Ad show error: $e');
-      _load();
+      load();
     }
 
     return completer.future;

@@ -17,8 +17,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    FlutterAdsInterstitial().init();
-    FlutterAdsRewarded().init();
+    FlutterAdsInterstitial()
+      ..init()
+      ..load();
+    FlutterAdsRewarded()
+      ..init()
+      ..load();
     FlutterAdsAppOpen.init(
         isShowWhenReady: true, shouldShowAdOnAppResume: true);
     super.initState();

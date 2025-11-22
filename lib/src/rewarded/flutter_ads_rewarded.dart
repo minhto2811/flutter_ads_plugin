@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../admod_service.dart';
+
 class FlutterAdsRewarded {
   FlutterAdsRewarded._internal();
+
   static FlutterAdsRewarded? _instance;
 
   factory FlutterAdsRewarded() {
@@ -16,13 +18,12 @@ class FlutterAdsRewarded {
   RewardedAd? _ad;
   bool _loading = false;
 
-  Future<void> init({String? iosId, String? androidId}) async {
+  void init({String? iosId, String? androidId}) {
     _iosId = iosId;
     _androidId = androidId;
-    await _load();
   }
 
-  Future<void> _load() async {
+  Future<void> load() async {
     if (_loading) return;
     _loading = true;
 
@@ -38,13 +39,17 @@ class FlutterAdsRewarded {
     }
   }
 
-  void release() => _ad?.dispose();
+  Future<void> release() async {
+    await _ad?.dispose();
+    _ad = null;
+  }
 
-  Future<bool> show({required OnUserEarnedRewardCallback onUserEarnedReward}) async {
+  Future<bool> show(
+      {required OnUserEarnedRewardCallback onUserEarnedReward}) async {
     final completer = Completer<bool>();
 
     if (_ad == null && !_loading) {
-      await _load();
+      await load();
     }
 
     if (_ad == null) {
@@ -55,13 +60,13 @@ class FlutterAdsRewarded {
     _ad?.fullScreenContentCallback = FullScreenContentCallback(
       onAdFailedToShowFullScreenContent: (ad, error) async {
         completer.completeError('Ad failed to show: $error');
-        await ad.dispose();
-        await _load();
+        ad.dispose();
+        release();
       },
       onAdDismissedFullScreenContent: (ad) async {
         completer.complete(true);
-        await ad.dispose();
-        await _load();
+        ad.dispose();
+        release();
       },
     );
 

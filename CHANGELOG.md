@@ -1,3 +1,7 @@
+## 2.0.1
+
+* Separate ad loading logic separately.
+
 ## 2.0.0
 
 ### ✨ Update

@@ -114,10 +114,10 @@ String? androidId
 Display Rewarded Ads:
 
 ```dart
-FlutterAdsRewarded().init({
+FlutterAdsRewarded()..init({
 String? iosId,
 String? androidId
-});
+})..load();
 
 FlutterAdsRewarded().show();
 
@@ -127,10 +127,10 @@ FlutterAdsRewarded().release();
 Display Interstitial Ads:
 
 ```dart
-FlutterAdsInterstitial().init({
+FlutterAdsInterstitial()..init({
 String? iosId,
 String? androidId
-});
+})..load();
 
 FlutterAdsInterstitial().show();
 
