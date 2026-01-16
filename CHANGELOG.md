@@ -1,3 +1,8 @@
+## 2.0.2
+
+* Update dependencies.
+
+
 ## 2.0.1
 
 * Separate ad loading logic separately.

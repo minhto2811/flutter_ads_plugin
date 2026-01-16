@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ads_plugin/flutter_ads_plugin.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+void main() async {
   runApp(const MyApp());
 }
 
@@ -17,30 +15,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    FlutterAdsInterstitial()
-      ..init()
-      ..load();
-    FlutterAdsRewarded()
-      ..init()
-      ..load();
-    FlutterAdsAppOpen.init(
-        isShowWhenReady: true, shouldShowAdOnAppResume: true);
-    super.initState();
   }
 
   @override
   void dispose() {
-    FlutterAdsInterstitial().release();
-    FlutterAdsRewarded().release();
     super.dispose();
-  }
-
-  showRewardedAd() {
-    FlutterAdsRewarded().show(onUserEarnedReward: (view, item) {});
-  }
-
-  showInterstitialAd() {
-    FlutterAdsInterstitial().show();
   }
 
   @override
@@ -50,23 +29,8 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text('Plugin example app'),
           ),
-          body: ListView(
+          body: Column(
             children: [
-              const SizedBox(height: 24),
-              const FlutterAdsBanner(
-                iosId: '',
-                androidId: '',
-              ),
-              const SizedBox(height: 24),
-              const FlutterAdsNative(),
-              const SizedBox(height: 24),
-              ElevatedButton(
-                  onPressed: showRewardedAd,
-                  child: const Text('Show Rewarded Ad')),
-              const SizedBox(height: 24),
-              ElevatedButton(
-                  onPressed: showInterstitialAd,
-                  child: const Text('Show Interstitial Ad')),
             ],
           )),
     );
