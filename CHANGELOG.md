@@ -1,3 +1,7 @@
+## 2.0.3
+
+* Update dependencies `equatable: ^2.0.8, google_mobile_ads: ^8.0.0`
+
 ## 2.0.2
 
 * Update dependencies.

@@ -1,6 +1,6 @@
 name: flutter_ads_plugin
 description: "Effortlessly integrate and manage Google Ads in your Flutter app with minimal code. Simplifies ad creation and boosts monetization potential."
-version: 2.0.2
+version: 2.0.3
 homepage: https://github.com/minhto2811/flutter_ads_plugin.git
 
 environment:
@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
-  equatable: ^2.0.7
-  google_mobile_ads: ^7.0.0
+  equatable: ^2.0.8
+  google_mobile_ads: ^8.0.0
 
 dev_dependencies:
   flutter_test:
